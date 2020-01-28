@@ -1,13 +1,10 @@
 identification division.
 	program-id. sqrtbaby.
-
 environment division.
 	input-output section.
 
 
 data division.
-	file section.
-
 	working-storage section.
 		77 diff picture v9(5).
 		77 z    picture 9(11)v9(6).
@@ -19,28 +16,26 @@ data division.
 
 		77 squareRoot pic s9(11)v9(6).
 		01 doMainLoop pic X(3) value 'yes'.
-
-
+		77 formattedSquareRoot pic z(11).9(6).
 
 procedure division.
 
-	perform mainLoop until doMainLoop = 'no'.
+	perform until doMainLoop = 'no'
+		move 0 to done
+		move 0 to k
 
-	mainLoop.
-		move 0 to done.
-		move 0 to k.
-
-		display "Enter the number to find the square root of: ".
-		accept squareRoot.
+		display "Enter the number to find the square root of: "
+		accept squareRoot
 
 	    if squareRoot > 0 then
 	    	perform findSquareRoot
 	    else
 	    	display "invalid input"
-	    end-if.
-
-	    display "Do you want to calculate another root? (yes/no): ".
-	    accept doMainLoop.
+	    end-if
+	    
+	    display "Do you want to calculate another root? (yes/no): "
+	    accept doMainLoop
+	end-perform.
 
 	findSquareRoot. 
 	    move squareRoot to z.
@@ -63,7 +58,8 @@ procedure division.
 	    if temp / (y + x) > diff 
 	    	move y to x
 	    else
-	    	display "The square root is: ", y
+	    	move y to formattedSquareRoot
+	    	display "The square root is: ", formattedSquareRoot
 	    	move 1 to done
 	    end-if.
 
