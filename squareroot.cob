@@ -52,7 +52,7 @@ procedure division using userInput, result.
     move 0 to numIterations.
     goback.
 
-doCalculation. 
+doCalculation.
     compute y rounded = 0.5 * (x + z / x).
     compute temp = y - x.
     if temp < 0
@@ -66,4 +66,3 @@ doCalculation.
         move y to result
         move 1 to doneComputation
     end-if.
-    
