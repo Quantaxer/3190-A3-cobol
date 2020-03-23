@@ -1,3 +1,10 @@
+*> File: sqrtbabyex.cob
+*> Name: Peter Hudel
+*> Student Number: 1012673
+*> Date: 03/27/2020
+*> Description: Task 2: This program is a modernized version of cobol to calculate the babylonian square root.
+*> This one incorporates an external function to calculate the root.
+
 *> --------------------------------------------------------------------------------------------
 identification division.
 	program-id. sqrtbaby.
@@ -29,7 +36,7 @@ procedure division.
 	    	display "invalid input"
 	    end-if
 
-	    display "Do you want to calculate another root? (yes/no): "
+	    display "Type 'no' to stop calculating roots, anything else to continue: "
 	    accept doMainLoop
 	end-perform.
 stop run.

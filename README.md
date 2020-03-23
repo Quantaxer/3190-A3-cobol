@@ -1,8 +1,5 @@
 # 3190-A3-cobol
 
-- TODO:
-    - Do Task 2
-
 - How to compile:
     - Task 1:
         - cobc -x -free -Wall sqrtbaby.cob
